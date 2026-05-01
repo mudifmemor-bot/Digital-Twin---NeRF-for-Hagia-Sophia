@@ -1,0 +1,41 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Navigation hint */
+.nav-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  z-index: 30;
+  pointer-events: none;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.nav-hint-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Hide nav hint when tour or debug is active */
+.nav-hint:has(~ .tour-overlay),
+.nav-hint:has(~ .debug-panel) {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-hint {
+    display: none;
+  }
+}

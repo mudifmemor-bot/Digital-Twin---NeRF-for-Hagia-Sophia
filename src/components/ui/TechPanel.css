@@ -1,0 +1,247 @@
+.tech-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  z-index: 60;
+}
+
+.tech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-lg);
+  flex-shrink: 0;
+}
+
+.tech-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+/* Tabs */
+.tech-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.tech-tab {
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-tertiary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  margin-bottom: -1px;
+}
+
+.tech-tab:hover {
+  color: var(--text-secondary);
+}
+
+.tech-tab.active {
+  color: var(--accent-tertiary);
+  border-bottom-color: var(--accent-primary);
+}
+
+/* Content */
+.tech-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-lg);
+}
+
+.tech-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.tech-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tech-section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tech-section-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.tech-description {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Formula */
+.tech-formula {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-md);
+  background: rgba(99,102,241,0.06);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: var(--radius-md);
+}
+
+.formula-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.formula-code {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--accent-tertiary);
+  font-weight: 500;
+}
+
+/* Lists */
+.tech-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-list-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tech-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tech-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tech-bullet {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.tech-bullet.accent {
+  background: var(--accent-primary);
+}
+
+.tech-bullet.emerald {
+  background: var(--accent-emerald);
+}
+
+.tech-bullet.rose {
+  background: var(--accent-rose);
+}
+
+/* Comparison table */
+.comparison-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.comparison-header,
+.comparison-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr;
+}
+
+.comparison-header {
+  background: rgba(255,255,255,0.03);
+}
+
+.comp-cell {
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.comp-cell.header {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.comp-cell.header.accent {
+  color: var(--accent-tertiary);
+}
+
+.comp-cell.label {
+  color: var(--text-primary);
+  font-weight: 500;
+  background: rgba(255,255,255,0.02);
+}
+
+.comp-cell.traditional {
+  color: var(--text-tertiary);
+}
+
+.comp-cell.neural {
+  color: var(--accent-emerald);
+  background: rgba(16,185,129,0.03);
+}
+
+.comparison-row:last-child .comp-cell {
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .tech-panel {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 40px);
+  }
+
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 100px 1fr 1fr;
+  }
+
+  .comp-cell {
+    padding: 8px 10px;
+    font-size: 0.68rem;
+  }
+}
